@@ -1,0 +1,13 @@
+# Negeer alle build output in elke submap
+**/bin/
+**/obj/
+**/publish/
+
+# Negeer lokale user settings en secrets
+**/.env
+**/*.user
+**/*.suo
+
+# Negeer de publish mappen specifiek
+bulk-delete/publish/
+create/publish/
