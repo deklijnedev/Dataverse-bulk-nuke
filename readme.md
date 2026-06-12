@@ -31,7 +31,7 @@ SO in the future when you are building something with low-code, for the love of 
 The performance below is only at the start of the run and for the test and I used an VPS with 64 cores 
 - Create script: creates +- 239 records a second
 - Create-elastic: creates +- 600 records a second
-- 
+
 Warnings:
 - LLM's are used to generate the code, so it is far from perfect (I created all the code in just 10 minutes)
 - If you take this code somewhere other than a test environment, please take some time to rewrite the code
