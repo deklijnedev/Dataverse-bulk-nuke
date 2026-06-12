@@ -27,9 +27,15 @@ dotnet build -c Release
 ./bin/Release/net8.0/bulk-delete <schema_name>
 ```
 
+# Warnings:
+- LLM's were used to generate the code, so it is far from perfect (I needed to get the code working fast)
+- If you take this code somewhere other than a test environment, please take some time to rewrite the code
+
 ---
 
 # Benchmarking Power Automate performance vs C#
+
+Originally I wrote these scripts to run a couple of benchmarks test to compare the performance of Power Automate and C#.
 
 # Comparison not fair
 
@@ -58,9 +64,5 @@ SO in the future when you are building something with low-code, for the love of 
 The performance below is only at the start of the run and for the test and I used an VPS with 64 cores 
 - Create script: creates +- 239 records a second
 - Create-elastic: creates +- 600 records a second
-
-Warnings:
-- LLM's are used to generate the code, so it is far from perfect (I created all the code in just 10 minutes)
-- If you take this code somewhere other than a test environment, please take some time to rewrite the code
 
 
