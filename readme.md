@@ -1,8 +1,35 @@
-Custom C# scripts to test the performance of dataverse.
-
-Benchmarking Power Automate performance vs C#
+Custom C# scripts to do bulk-operations on dataverse.
 
 ---
+
+## Getting Started
+
+Fill in your own Dataverse environment credentials (`Url`, `ClientId`, `ClientSecret`) in each script (e.g., in [create/Program.cs](file:///mnt/c/Users/lars.deklijne/Downloads/temp/Dataverse-Tools/create/Program.cs#L8)).
+
+> [!WARNING]
+> Note: in [count-all](file:///mnt/c/Users/lars.deklijne/Downloads/temp/Dataverse-Tools/count-all/Program.cs#L6), [create](file:///mnt/c/Users/lars.deklijne/Downloads/temp/Dataverse-Tools/create/Program.cs#L8), and [create-elastic](file:///mnt/c/Users/lars.deklijne/Downloads/temp/Dataverse-Tools/create-elastic/Program.cs#L7), there is a syntax error in the placeholder line (`ClientId="";ClientSecret="";`). Replace the entire line with:
+> ```csharp
+> string connectionString = "AuthType=ClientSecret;Url=https://your-environment.crm4.dynamics.com;ClientId=YOUR-CLIENT-ID;ClientSecret=YOUR-CLIENT-SECRET;SkipDiscovery=True";
+> ```
+
+### Build & Run
+
+Navigate to the directory of the desired script, compile the project, and execute the compiled binary:
+
+```bash
+# 1. Navigate to the script directory
+cd bulk-delete
+
+# 2. Build the project (Release mode)
+dotnet build -c Release
+
+# 3. Run the compiled binary (pass arguments if required)
+./bin/Release/net8.0/bulk-delete <schema_name>
+```
+
+---
+
+# Benchmarking Power Automate performance vs C#
 
 # Comparison not fair
 
@@ -37,27 +64,3 @@ Warnings:
 - If you take this code somewhere other than a test environment, please take some time to rewrite the code
 
 
-## Getting Started
-
-Fill in your own Dataverse environment credentials (`Url`, `ClientId`, `ClientSecret`) in each script (e.g., in [create/Program.cs](file:///mnt/c/Users/lars.deklijne/Downloads/temp/Dataverse-Tools/create/Program.cs#L8)).
-
-> [!WARNING]
-> Note: in [count-all](file:///mnt/c/Users/lars.deklijne/Downloads/temp/Dataverse-Tools/count-all/Program.cs#L6), [create](file:///mnt/c/Users/lars.deklijne/Downloads/temp/Dataverse-Tools/create/Program.cs#L8), and [create-elastic](file:///mnt/c/Users/lars.deklijne/Downloads/temp/Dataverse-Tools/create-elastic/Program.cs#L7), there is a syntax error in the placeholder line (`ClientId="";ClientSecret="";`). Replace the entire line with:
-> ```csharp
-> string connectionString = "AuthType=ClientSecret;Url=https://your-environment.crm4.dynamics.com;ClientId=YOUR-CLIENT-ID;ClientSecret=YOUR-CLIENT-SECRET;SkipDiscovery=True";
-> ```
-
-### Build & Run
-
-Navigate to the directory of the desired script, compile the project, and execute the compiled binary:
-
-```bash
-# 1. Navigate to the script directory
-cd bulk-delete
-
-# 2. Build the project (Release mode)
-dotnet build -c Release
-
-# 3. Run the compiled binary (pass arguments if required)
-./bin/Release/net8.0/bulk-delete <schema_name>
-```
