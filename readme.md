@@ -7,7 +7,7 @@ Custom C# scripts to do bulk-operations on dataverse.
 Fill in your own Dataverse environment credentials (`Url`, `ClientId`, `ClientSecret`) in each script (e.g., in [create/Program.cs](file:///mnt/c/Users/lars.deklijne/Downloads/temp/Dataverse-Tools/create/Program.cs#L8)).
 
 > [!WARNING]
-> Note: in [count-all](file:///mnt/c/Users/lars.deklijne/Downloads/temp/Dataverse-Tools/count-all/Program.cs#L6), [create](file:///mnt/c/Users/lars.deklijne/Downloads/temp/Dataverse-Tools/create/Program.cs#L8), and [create-elastic](file:///mnt/c/Users/lars.deklijne/Downloads/temp/Dataverse-Tools/create-elastic/Program.cs#L7), there is a syntax error in the placeholder line (`ClientId="";ClientSecret="";`). Replace the entire line with:
+> Note: in [count-all](file:///mnt/c/Users/lars.deklijne/Downloads/temp/Dataverse-Tools/count-all/Program.cs#L6), [create](file:///mnt/c/Users/lars.deklijne/Downloads/temp/Dataverse-Tools/create/Program.cs#L8), and [create-elastic](file:///mnt/c/Users/lars.deklijne/Downloads/temp/Dataverse-Tools/create-elastic/Program.cs#L7), there is an empty string in the placeholder line (`ClientId="";ClientSecret="";`). Replace the entire line with:
 > ```csharp
 > string connectionString = "AuthType=ClientSecret;Url=https://your-environment.crm4.dynamics.com;ClientId=YOUR-CLIENT-ID;ClientSecret=YOUR-CLIENT-SECRET;SkipDiscovery=True";
 > ```
